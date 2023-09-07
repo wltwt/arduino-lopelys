@@ -1,5 +1,11 @@
 // C++ code
 //
+
+/*
+  Kun for utforsking av noen konsepter.
+  Se bort i fra denne filen. 
+*/
+
 void setup()
 {
   pinMode(LED_BUILTIN, OUTPUT);
@@ -13,10 +19,7 @@ void for_loop_func(int &j) {
     Serial.print(", ");
   }
   Serial.println("");
-  
 }
-
-
 
 void loop()
 {
@@ -36,5 +39,3 @@ void loop()
   Serial.print("BLINK OVER,      i=");
   Serial.println(i);
 }
-
-

@@ -1,6 +1,6 @@
 //------------------------------------------------------------
 /*	Programmet skal slå på og av LEDene i et løpelysmønster. 
-	Vi ser at LEDene ikke er koblet til etterfølgende pinnenumre
+	  Vi ser at LEDene ikke er koblet til etterfølgende pinnenumre
     slik vi hadde i Problemstilling 1.
     
     Hvordan løser vi det? 
@@ -9,16 +9,29 @@
     som vi fikk til i Problemstilling 1. Vi vil også ha samme glatte
     løpelyset som flyter opp og ned rekka av LEDs.
 */
+//-----------------------------------------------------------
+/*
+  Problemstilling 2:
+
+  Ordnet mer kompakt kode og ikke-blokkerende kode.
+
+	Program til arduino som kontrollerer blinking til en rekke LED'er.
+	LED'ene kan settes med byte-arrayet ledArray[].
+  Hastighet og rettning settes med timer og forward variablene.
+
+  Lenke til sketch:
+  https://www.tinkercad.com/things/dhP4eWQFaFF-problemstilling-2/editel
+*/
 
 // led-oppsett
 const byte ledArray[] = {2,4,7,8,11,13};
 
 // bestem hastighet i ms
-const int timer = 100;
+const byte timer = 100;
 
 // brukes for å sette retning.
 bool forward = false;
-int i = 0;
+byte i = 0;
 
 /*
 	oppsett av arduinoen som kjører en gang før loop()
@@ -58,7 +71,7 @@ void checkDirection() {
     hovedprogrammet som kjører
 */
 void loop() {
-  // setter opp static så variablen ikke resetter seg til 0 med hver runde  
+  // setter opp static så variablen ikke resetter seg til 0 med hver runde unsigned gir ingen negative tall long gir større tall
   static unsigned long firstTimer = 0;
   
   // if-setningen under kjører med 100ms intervaller, basert på timer-variablen

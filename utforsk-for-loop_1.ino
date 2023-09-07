@@ -1,5 +1,8 @@
-// C++ code
-//
+/*
+  Kode for å utforske litt forskjellige inkrementerings-strategier
+  i for-løkker
+*/
+
 void setup()
 {
   Serial.begin(9600);
@@ -7,11 +10,18 @@ void setup()
 
 void loop()
 {
+  // static slik at counter variabelen forblir lik ved hvert funksjonskall
   static int counter;
+  
   Serial.println("for-lokken sin tellevariabel:");
   for (int i = 0; i <= 9; i++) {
+    //teller alle runder loop() kjører
     counter++;
-  	Serial.print(i);
+  	
+    // print itereringstall
+    Serial.print(i);
+    
+    // kun for formatering, hver gang loopen har kjørt 9 ganger print nytt tall uten ','
     if (i != 9) {
       Serial.print(", ");
     } else {
@@ -19,13 +29,12 @@ void loop()
     }
     //Serial.println(counter);
   }
-  
+  // utskrift av tellevariabel til slutt
   Serial.println("");
   Serial.print("egen tellevariabel: ");
   Serial.println(counter);
   Serial.println("");
 }
-
 
 // for (int i = 0; i <= 9; i++)
 // Serial Monitor:

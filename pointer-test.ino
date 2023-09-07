@@ -2,6 +2,11 @@
 //
 // https://www.tinkercad.com/things/es2PoJHAyll-grand-jofo-bombul/editel
 //
+/*
+  Kun for utforsking av noen konsepter.
+  Kan se bort i fra denne filen. 
+*/
+
 void setup()
 {
   pinMode(LED_BUILTIN, OUTPUT);
